@@ -1,0 +1,43 @@
+#Uncomment next second lines for using react-native
+#require_relative '../node_modules/react-native/scripts/react_native_pods'
+#require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'test-pytorch-ios' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  
+#Uncomment use_native_modules
+#  config = use_native_modules!
+
+#  use_react_native!(
+#    :path => config[:reactNativePath],
+#    # to enable hermes on iOS, change `false` to `true` and then install pods
+#    :hermes_enabled => false
+#  )
+  
+  # Pods for test-pytorch-ios
+
+#    pod 'LibTorch-Lite', '~> 1.9.0'
+pod 'LibTorch', '~>1.9.0'
+
+
+  target 'test-pytorch-iosTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'test-pytorch-iosUITests' do
+    # Pods for testing
+  end
+
+
+  #Uncomment pod installer for using react native
+#  post_install do |installer|
+#    react_native_post_install(installer)
+#    __apply_Xcode_12_5_M1_post_install_workaround(installer)
+#  end
+
+end
